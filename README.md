@@ -1,3 +1,4 @@
+
 # Automobile Market
 
 Esse projeto foi desenvolvido com objetivos experimentais e de estudo para resolução de um case com objetivo de criar um sistema de cadastro e compra de automóveis, que funcione através de uma web API utilizando Springboot e recursos do Springcloud.
@@ -27,11 +28,11 @@ Foi realizado o deploy do projeto no AWS BeanStalk e pode ser utilizado através
 ### Auth
 
 * POST auth/oauth/token
------------------------------------------------
+
 Authorization Type: Basic Auth
 username: automobile
 password: password
------------------------------------------------
+
 Request (form-data):
 username: admin
 password: password
@@ -39,7 +40,7 @@ scope: web
 grant_type: password
 
 * GET auth/user
------------------------------------------------
+
 Authorization: Bearer Token
 
 ### Automobile
@@ -47,9 +48,9 @@ Authorization: Bearer Token
 * GET automobile/automobile
 
 * POST automobile/automobile
------------------------------------------------
+
 Authorization: Bearer Token
------------------------------------------------
+
 Request (Body):
 {
     "brand": "Volkswagen",
@@ -60,24 +61,17 @@ Request (Body):
 ### Bill
 
 * GET bill/bill/{id}
------------------------------------------------
+
 Authorization: Bearer Token
 
 * POST bill/bill
------------------------------------------------
+
 Authorization: Bearer Token
------------------------------------------------
+
 Request (Body):
 {
     "automobileId": 1,
     "value": 10000,
     "dueDate": "2020-11-30T23:57:08.883+00:00"
 }
-
-
-
-
-
-
-
 
