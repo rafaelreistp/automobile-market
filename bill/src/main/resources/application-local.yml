@@ -1,0 +1,40 @@
+server:
+  port: 8081
+  
+spring:
+  application:
+    name: bill
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+      
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:5555/auth/user
+      
+resilience4j.circuitbreaker:
+    configs:
+        default:
+            registerHealthIndicator: true
+            slidingWindowSize: 10
+            minimumNumberOfCalls: 5
+            permittedNumberOfCallsInHalfOpenState: 3
+            automaticTransitionFromOpenToHalfOpenEnabled: true
+            waitDurationInOpenState: 5s
+            failureRateThreshold: 50
+            eventConsumerBufferSize: 10
+    instances:
+        automobileBackend:
+            baseConfig: default
+            
+resilience4j.timelimiter:
+    configs:
+        default:
+            cancelRunningFuture: false
+            timeoutDuration: 1s
+    instances:
+        automobileBackend:
+            baseConfig: default

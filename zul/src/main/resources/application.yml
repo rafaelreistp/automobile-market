@@ -1,0 +1,22 @@
+server:
+  port: 5000
+  
+spring:
+  application:
+    name: zul
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "routes"
+        
+zuul:
+  sensitive-headers:
+  - Cookie, Authorization
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL}

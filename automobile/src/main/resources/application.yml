@@ -1,0 +1,22 @@
+server:
+  port: 5000
+  
+spring:
+  application:
+    name: automobile
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+      
+security:
+  oauth2:
+    resource:
+      user-info-uri: ${AUTH_USER_URL}
+      
+      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL}
