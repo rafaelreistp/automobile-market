@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "4f7016d3-61e7-4081-a720-72c99573b316",
+		"name": "Automobile Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save Automobile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ed265b89-a720-46d5-b5d6-e599cca28111",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"brand\": \"Volkswagen\",\n\t\"model\": \"Polo\",\n\t\"value\": 60000\n}"
+				},
+				"url": {
+					"raw": "http://zul-env.eba-pcncrpqc.sa-east-1.elasticbeanstalk.com/automobile/automobile",
+					"protocol": "http",
+					"host": [
+						"zul-env",
+						"eba-pcncrpqc",
+						"sa-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"automobile",
+						"automobile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Automobiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://zul-env.eba-pcncrpqc.sa-east-1.elasticbeanstalk.com/automobile/automobile",
+					"protocol": "http",
+					"host": [
+						"zul-env",
+						"eba-pcncrpqc",
+						"sa-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"automobile",
+						"automobile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Zul Routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://zul-env.eba-pcncrpqc.sa-east-1.elasticbeanstalk.com/actuator/routes",
+					"protocol": "http",
+					"host": [
+						"zul-env",
+						"eba-pcncrpqc",
+						"sa-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"actuator",
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eureka Apps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://eureka-env.eba-bgm3m58j.sa-east-1.elasticbeanstalk.com/eureka/apps",
+					"protocol": "http",
+					"host": [
+						"eureka-env",
+						"eba-bgm3m58j",
+						"sa-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"eureka",
+						"apps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ed265b89-a720-46d5-b5d6-e599cca28111",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://zul-env.eba-pcncrpqc.sa-east-1.elasticbeanstalk.com/auth/user",
+					"protocol": "http",
+					"host": [
+						"zul-env",
+						"eba-pcncrpqc",
+						"sa-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"auth",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Get Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "automobile",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"type": "text",
+						"value": "admin",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"type": "text",
+						"value": "password",
+						"disabled": true
+					},
+					{
+						"key": "scope",
+						"type": "text",
+						"value": "web",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "web",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://zul-env.eba-pcncrpqc.sa-east-1.elasticbeanstalk.com/auth/oauth/token",
+					"protocol": "http",
+					"host": [
+						"zul-env",
+						"eba-pcncrpqc",
+						"sa-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "scope",
+							"value": "web",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bill Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ed265b89-a720-46d5-b5d6-e599cca28111",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"automobileId\": 1,\n\t\"value\": 10000,\n\t\"dueDate\": \"2020-11-30T23:57:08.883+00:00\"\n}"
+				},
+				"url": {
+					"raw": "http://zul-env.eba-pcncrpqc.sa-east-1.elasticbeanstalk.com/bill/bill",
+					"protocol": "http",
+					"host": [
+						"zul-env",
+						"eba-pcncrpqc",
+						"sa-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"bill",
+						"bill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bill Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ed265b89-a720-46d5-b5d6-e599cca28111",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://zul-env.eba-pcncrpqc.sa-east-1.elasticbeanstalk.com/bill/bill/1",
+					"protocol": "http",
+					"host": [
+						"zul-env",
+						"eba-pcncrpqc",
+						"sa-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"bill",
+						"bill",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
